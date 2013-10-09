@@ -1,0 +1,10 @@
+name: Logos
+main: io.github.bobthecookie.logos.Logos
+version: 0.1
+
+commands:
+  test:
+    description: Testing this shit
+    usage: /<command>
+    permission: logos.basic
+    permission-message: You don't have permission
