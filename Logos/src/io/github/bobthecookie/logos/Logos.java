@@ -10,8 +10,6 @@ public class Logos extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		this.getLogger().info("onEnable invoked");
-		System.out.println("Success!");
-//		this.getCommand("test").setExecutor(new LogosCommandExecutor(this));
 	}
 	
 	@Override
@@ -22,13 +20,10 @@ public class Logos extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		// sender: /cmd args0 args1...
 		// sender: /label args0 args1...
-		if(cmd.getName().equalsIgnoreCase("test")){
-			if(sender instanceof Player){
-				Player player = (Player)sender;
-				sender.sendMessage("You're a player");
-			} else {
-				sender.sendMessage("You're the console");
-			}
+		boolean isPlayer = sender instanceof Player;
+		String command = cmd.getName();
+		if(command.equalsIgnoreCase("help")){
+			getServer().broadcastMessage("Help broadcast");
 		}
 		return true;
 	}
